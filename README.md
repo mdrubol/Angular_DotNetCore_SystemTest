@@ -2,10 +2,9 @@
 
 Points discussed :
 
-Created Tricor.API Core(6.0).
-Used JWT (JSON Web Token) for securely transmitting information
+Created Tricor.API Core(6.0) and used JWT (JSON Web Token) for securely transmitting information
 
-Enable CORS in Asp.Net Core.
+Enabled CORS in Asp.Net Core.
 
 Angular : 
   Created a Angular web application which contains the following features.
