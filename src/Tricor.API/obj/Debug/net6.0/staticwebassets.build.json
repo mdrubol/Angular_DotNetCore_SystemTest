@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "tZQkSOLZwUA9XZDz+LDVhQTT4q9F3Lf9i3+vo4zsF6U=",
+  "Source": "Tricor.API",
+  "BasePath": "_content/Tricor.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

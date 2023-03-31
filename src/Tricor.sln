@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "AngularProjectTricor", "AngularProjectTricor\AngularProjectTricor.esproj", "{ECBBF155-2359-4843-9A33-D843F2C79B5A}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Tricor.Web", "Tricor.Web\TricorWeb.esproj", "{ECBBF155-2359-4843-9A33-D843F2C79B5A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tricor.API", "Tricor.API\Tricor.API.csproj", "{B3734CD7-FC38-41BB-BA49-91FEB426C1D1}"
 EndProject
