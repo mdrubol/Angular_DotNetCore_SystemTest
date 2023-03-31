@@ -4,6 +4,7 @@ Points discussed :
 
 Created Tricor.API Asp.Net Core(6.0) with RiskController CRUD web methods.
 Used JWT (JSON Web Token) for securely transmitting information
+
 Enable CORS in Asp.Net Core.
 
 Angular : 
@@ -11,7 +12,7 @@ Angular :
   Login Page – with valid user credentials.
   Module selection in landing page – Admin and User module
 
-Get the Code 
+How to Run the Code 
 Create DB,Table and Run insert statement from DBScript folder
 Change  Web API DB connection string in appsettings.json and run the Tricor.API 
 
@@ -19,4 +20,5 @@ $ npm install : Run npm i or npm install in terminal, npm will download and inst
 
 //run the app
 $ ng serve -o
-//update Web API DB connection string
+
+ 
