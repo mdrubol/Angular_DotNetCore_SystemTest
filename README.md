@@ -10,6 +10,10 @@ Angular :
   Created a Angular web application which contains the following features.
   Login Page – with valid user credentials.
   Module selection in landing page – Admin and User module.
+ 
+ 1. Admin Module : Create a CRUD page called risks.
+ 2. User Module : User can be able to create new risk and also can be able to select from admin. Once click “select from admin” button, user can choose the risk which added in admin.
+
 
 How to Run the Code 
 
