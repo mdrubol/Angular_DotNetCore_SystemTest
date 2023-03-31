@@ -1,0 +1,29 @@
+<div id="app">
+  
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="javascript:void(0)" class="navbar-brand" style="font: size 80px; ;">Tricor</a>
+
+
+    <ul class="navbar-nav ml-auto" *ngIf="!storageService.isLoggedIn()">
+       
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
+<span style="margin-left: 1400px;">
+    <ul class="navbar-nav ml-auto" *ngIf="storageService.isLoggedIn()">
+      
+    </ul>
+    
+  </span>
+  <ul *ngIf="storageService.isLoggedIn()" class="nav navbar-nav navbar-right">
+  
+    <li><a href="#" style="color: white;"><span class="glyphicon glyphicon-user"></span> {{ storageService.getUser().user.userName }}</a></li>
+    <li><a href="#"  (click)="logout()" style="color: white;"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+  </ul>
+  </nav>
+  
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

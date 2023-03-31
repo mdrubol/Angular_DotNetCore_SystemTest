@@ -1,0 +1,44 @@
+<br />
+<span style="margin-left: 1000px;">
+<a class="btn btn-success" routerLink="/risk"><i class="fa fa-plus" style="font-size:12px">&nbsp; Create New</i></a> 
+ 
+</span>
+<br /><br />
+<table class="table">
+            <thead>
+              <tr><td>Show {{userId}}</td><td>
+                <select class="form-select" aria-label="10">
+                  <option selected>10</option>
+                  <option value="1">20</option>
+                  <option value="2">50</option>
+                  <option value="3">100</option>
+                </select></td> 
+                <td>entries</td></tr>
+              <br/>
+              <tr>
+
+                <input *ngIf="userId !=-1" class="form-check-input" type="checkbox" id="checkbox">
+              <label class="form-check-label" for="checkbox" class="mr-2 label-table"></label>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th> 
+                <th *ngIf="userId!=-1" scope="col">Action</th>                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let risk of RiskList;let i=index">
+                <th scope="row"> 
+                  <input *ngIf="userId!=-1" type="checkbox" class="custom-control-input" id="tableDefaultCheck3">
+                  <a *ngIf="userId==-1" href="javascript:void(0)" routerLink="/risk/{{risk.id}}" ><i class="fa fa-plus" style="font-size:18px;color:#0a0a0a"></i></a>
+                </th>
+                <th scope="row">{{i+1}}</th>
+                <td><a routerLink="/risk/{{risk.id}}">{{risk.name}}</a></td>
+                <td>{{risk.description}}</td>
+                <td *ngIf="userId!=-1"><a routerLink="/risk/{{risk.id}}"><i class='fa fa-eye' style='font-size:18px;color:#3983f3'></i></a>  
+                  &nbsp;&nbsp; <a routerLink="/risk/{{risk.id}}">
+                    <i class='fa fa-edit' style='font-size:18px;color:#f3ed39'></i> </a>  
+                    &nbsp;&nbsp; <a href="javascript:void(0)" (click)="deleteRisk(risk.id)" ><i class="fa fa-trash-o" style="font-size:18px;color:red"></i></a>  </td>
+                <td> </td>
+              </tr>               
+            </tbody>
+          </table>
