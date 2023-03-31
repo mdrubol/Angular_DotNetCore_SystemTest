@@ -13,6 +13,7 @@ Angular :
   Module selection in landing page – Admin and User module
 
 How to Run the Code 
+
 Create DB,Table and Run insert statement from DBScript folder
 Change  Web API DB connection string in appsettings.json and run the Tricor.API 
 
