@@ -14,6 +14,7 @@ export class RiskListComponent implements OnInit,OnChanges  {
   RiskList: Array<Risk>;
   @Input() userId:number = 0;
   @Input() showAll :boolean = false;
+  @Input() showCreateNew :boolean = true;
   roles: string[] = [];
   showCheckBox:boolean = false;
   showPlusIcon:boolean = false;
