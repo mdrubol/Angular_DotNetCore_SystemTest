@@ -7,7 +7,7 @@
 <br /><br />
 <table class="table">
             <thead>
-              <tr><td>Show {{userId}}</td><td>
+              <tr><td>Show <!-- {{userId}} --></td><td>
                 <select class="form-select" aria-label="10">
                   <option selected>10</option>
                   <option value="1">20</option>
@@ -30,7 +30,10 @@
               <tr *ngFor="let risk of RiskList;let i=index">
                 <th scope="row"> 
                   <input *ngIf="userId!=-1" type="checkbox" class="custom-control-input" id="tableDefaultCheck3">
-                  <a *ngIf="userId==-1" href="javascript:void(0)" routerLink="/risk/{{risk.id}}" ><i class="fa fa-plus" style="font-size:18px;color:#0a0a0a"></i></a>
+                  <a *ngIf="userId==-1" href="javascript:void(0)" routerLink="/SelectFromAdmin/{{risk.id}}" ><i class="fa fa-plus" style="font-size:18px;color:#0a0a0a"></i></a>
+                  
+                <!-- <a *ngIf="userId==-1" href="javascript:void(0)" [routerLink]="['/risk']" [queryParams]="{ id: risk.id, status: status }"><i class="fa fa-plus" style="font-size:18px;color:#0a0a0a"></i></a>
+              -->
                 </th>
                 <th scope="row">{{i+1}}</th>
                 <td><a routerLink="/risk/{{risk.id}}">{{risk.name}}</a></td>

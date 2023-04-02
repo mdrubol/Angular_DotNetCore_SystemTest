@@ -16,6 +16,8 @@ import { RiskListComponent } from './risk-list/risk-list.component';
 import { RiskComponent } from './risk/risk.component';
 import { AuthInterceptor } from './_services/auth.interceptor';
 import { AdminRiskListComponent } from './admin-risk-list/admin-risk-list.component';
+import {SelectFromAdminComponent} from './select-from-admin/select-from-admin.component'
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { AdminRiskListComponent } from './admin-risk-list/admin-risk-list.compon
     BoardUserComponent,
     RiskListComponent,
     RiskComponent,
-    AdminRiskListComponent
+    AdminRiskListComponent,
+    SelectFromAdminComponent
   ],
   imports: [
     BrowserModule,

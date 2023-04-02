@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RiskComponent {
   risk: Risk;
-
+  status:boolean=true;
   constructor(public riskService: RiskService, route: ActivatedRoute,private router: Router) {
     
     this.risk = {} as Risk;
@@ -18,7 +18,10 @@ export class RiskComponent {
     route.paramMap.subscribe(param => {
       if (param && param.get('id')) {
         let id: number = Number(param.get('id'));
+        
         console.log(id);
+        //let status = Boolean( param.get('status'));
+        //console.log(status);
         this.getRiskById(id);
       }
 
@@ -28,7 +31,7 @@ export class RiskComponent {
     //this.getRiskById();
   }
   ngOnInit(): void {
-    // Implement OnInit hook method here
+     
   }
   clear() {
     this.risk.name = '';

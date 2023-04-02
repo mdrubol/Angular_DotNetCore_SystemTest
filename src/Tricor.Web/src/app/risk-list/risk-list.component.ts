@@ -18,14 +18,15 @@ export class RiskListComponent implements OnInit,OnChanges  {
   roles: string[] = [];
   showCheckBox:boolean = false;
   showPlusIcon:boolean = false;
-  showActionIcon:boolean = true;
-
+  showActionIcon: boolean = true;
+  status :boolean =false;
   constructor(public risktService: RiskService,private storageService: StorageService) {
     this.RiskList = new Array<Risk>();
     this.userId = this.showAll ? 0 : storageService.getUser().user.userId;
-    
+     
   }
   ngOnInit(): void {
+  
     this.roles = this.storageService.getUser().user.roles;
     if (this.roles.includes("Admin")) {
       this.showCheckBox =true;
@@ -36,7 +37,7 @@ export class RiskListComponent implements OnInit,OnChanges  {
     else {
       if(this.userId==-1)
       {
-        this.showCheckBox =false;       
+        this.showCheckBox = false;       
         this.showPlusIcon =true; 
         this.showActionIcon =false;
       }
