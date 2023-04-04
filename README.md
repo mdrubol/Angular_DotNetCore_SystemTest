@@ -26,4 +26,11 @@ $ npm install : Run npm i or npm install in terminal to download and install all
 
 $ ng serve -o
 
+Once you run the application then you will get the login page screen. Please enter the folowing credentials  i.e. username and password, then you will be logged in to the respective landing page.
+
+1.  Admin user  :   User Name: rubol30@gmail.com and Password : admin123 
+2 . Normal User :   User Name: mdrubol@yahoo.com and Password : admin123  
+
+ 
+
  
