@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component'; 
 import { AdminUserRiskListComponent } from './admin-user-risk-list/admin-user-risk-list.component';
 import { UserComponent } from './user/user.component';
 import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';

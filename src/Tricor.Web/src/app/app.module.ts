@@ -5,8 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component'; 
 import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
 import { UserComponent } from './user/user.component';
 import { AdminUserRiskListComponent } from './admin-user-risk-list/admin-user-risk-list.component';
@@ -22,8 +21,7 @@ import { SelectFromAdminComponent } from './select-from-admin/select-from-admin.
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    ProfileComponent,
+    LoginComponent,    
     AdminLandingPageComponent,
     UserComponent,
     AdminUserRiskListComponent,
