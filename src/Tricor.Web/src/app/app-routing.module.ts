@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminUserRiskListComponent } from './admin-user-risk-list/admin-user-risk-list.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import { UserComponent } from './user/user.component';
 import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
 import { RiskListComponent } from './risk-list/risk-list.component';
 import { RiskComponent } from './risk/risk.component';
@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'admin-user-risk-list', component: AdminUserRiskListComponent },
-  { path: 'user', component: BoardModeratorComponent },
+  { path: 'user', component: UserComponent },
   { path: 'admin-landing-page', component: AdminLandingPageComponent },
   { path: 'SelectFromAdmin/:id', component: SelectFromAdminComponent },
   { path: 'admin-risk-list', component: AdminRiskListComponent },

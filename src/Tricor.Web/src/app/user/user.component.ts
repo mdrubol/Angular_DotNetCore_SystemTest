@@ -5,10 +5,10 @@ import { StorageService } from '../_services/storage.service';
 import { UserService } from '../_services/user.service';
 
 @Component({
-  selector: 'app-board-moderator',
-  templateUrl: './board-moderator.component.html'
+  selector: 'app-user',
+  templateUrl: './user.component.html'
 })
-export class BoardModeratorComponent implements OnInit {
+export class UserComponent implements OnInit {
 
   userId: number = 0;
   showList: boolean = true;

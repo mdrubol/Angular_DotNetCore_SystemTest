@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import { UserComponent } from './user/user.component';
 import { AdminUserRiskListComponent } from './admin-user-risk-list/admin-user-risk-list.component';
 
 //import { httpInterceptorProviders } from './_helpers/http.interceptor';
@@ -25,7 +25,7 @@ import { SelectFromAdminComponent } from './select-from-admin/select-from-admin.
     LoginComponent,
     ProfileComponent,
     AdminLandingPageComponent,
-    BoardModeratorComponent,
+    UserComponent,
     AdminUserRiskListComponent,
     RiskListComponent,
     RiskComponent,
