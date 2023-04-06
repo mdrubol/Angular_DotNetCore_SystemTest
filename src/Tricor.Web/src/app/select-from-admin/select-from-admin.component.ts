@@ -24,15 +24,15 @@ import { Router } from '@angular/router';
 })
 export class SelectFromAdminComponent {
   risk: Risk;
-  status:boolean=true;
-  constructor(public riskService: RiskService, route: ActivatedRoute,private router: Router) {
-    
+  status: boolean = true;
+  constructor(public riskService: RiskService, route: ActivatedRoute, private router: Router) {
+
     this.risk = {} as Risk;
-    
+
     route.paramMap.subscribe(param => {
       if (param && param.get('id')) {
         let id: number = Number(param.get('id'));
-        
+
         console.log(id);
         //let status = Boolean( param.get('status'));
         //console.log(status);
@@ -40,31 +40,31 @@ export class SelectFromAdminComponent {
       }
 
     });
-    
+
 
     //this.getRiskById();
   }
   ngOnInit(): void {
-     
+
   }
   clear() {
     this.risk.name = '';
-    this.risk.description= '';
+    this.risk.description = '';
   }
-  saveRisk() {     
-      this.riskService.addRisk(this.risk).subscribe(data => {
-        if (data)
+  saveRisk() {
+    this.riskService.addRisk(this.risk).subscribe(data => {
+      if (data)
         //this.router.navigate(['/risk-list']);
-        
+
         this.router.navigateByUrl('/user');
-          //alert("Save Success");
-        else {
-          alert("Save Failed");
-        }
-      })   
+      //alert("Save Success");
+      else {
+        alert("Save Failed");
+      }
+    })
   }
 
-   
+
   getRiskById(id: number) {
     this.riskService.getRiskById(id).subscribe((data) => {
       //this.RiskList = data;

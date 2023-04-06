@@ -16,13 +16,13 @@ import { RiskListComponent } from './risk-list/risk-list.component';
 import { RiskComponent } from './risk/risk.component';
 import { AuthInterceptor } from './_services/auth.interceptor';
 import { AdminRiskListComponent } from './admin-risk-list/admin-risk-list.component';
-import {SelectFromAdminComponent} from './select-from-admin/select-from-admin.component'
+import { SelectFromAdminComponent } from './select-from-admin/select-from-admin.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,    
+    LoginComponent,
     ProfileComponent,
     BoardAdminComponent,
     BoardModeratorComponent,
@@ -40,12 +40,12 @@ import {SelectFromAdminComponent} from './select-from-admin/select-from-admin.co
   ],
   providers: [
     {
-      provide : HTTP_INTERCEPTORS,
+      provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi   : true,
+      multi: true,
     },
-    
-],
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

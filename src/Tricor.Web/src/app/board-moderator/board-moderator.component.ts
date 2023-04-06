@@ -6,24 +6,24 @@ import { UserService } from '../_services/user.service';
 
 @Component({
   selector: 'app-board-moderator',
-  templateUrl: './board-moderator.component.html' 
+  templateUrl: './board-moderator.component.html'
 })
 export class BoardModeratorComponent implements OnInit {
-  
-  userId:number=0;
-  showList:boolean=true;
 
-  constructor(public risktService: RiskService,private storageService: StorageService) { 
-    
-     this.userId=this.storageService.getUser().user.userId;
+  userId: number = 0;
+  showList: boolean = true;
+
+  constructor(public risktService: RiskService, private storageService: StorageService) {
+
+    this.userId = this.storageService.getUser().user.userId;
   }
-  LoadAdminData() : void{
+  LoadAdminData(): void {
     this.userId = -1;
   }
 
-  
+
 
   ngOnInit(): void {
-   
+
   }
 }

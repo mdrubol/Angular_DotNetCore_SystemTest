@@ -3,15 +3,16 @@
 
   <div class="dropdown" style="color: blueviolet;">
     <span style="float: right;">
-    <a   class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fa fa-plus" style="font-size:12px;width: 60px;"></i>&nbsp;Add
-    </a>
-  
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <li><a class="dropdown-item" routerLink="/risk">Create New</a></li>
-      <li><a class="dropdown-item" (click)="LoadAdminData()" >Select From Admin</a></li>
-   </ul>
-  </span>
-   <app-risk-list [showCreateNew]="false"  [userId]="userId"></app-risk-list>
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa fa-plus" style="font-size:12px;width: 60px;"></i>&nbsp;Add
+      </a>
+
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <li><a class="dropdown-item" routerLink="/risk">Create New</a></li>
+        <li><a class="dropdown-item" (click)="LoadAdminData()">Select From Admin</a></li>
+      </ul>
+    </span>
+    <app-risk-list [showCreateNew]="false" [userId]="userId"></app-risk-list>
   </div>
 </div>

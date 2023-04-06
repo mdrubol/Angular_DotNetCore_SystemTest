@@ -7,12 +7,12 @@ const USER_KEY = 'auth-user';
 })
 
 export class StorageService {
-  public showAdminBoard:boolean =false;
-  public showModeratorBoard:boolean = false;
-  public username:string='';
-  public userId:number=0;
+  public showAdminBoard: boolean = false;
+  public showModeratorBoard: boolean = false;
+  public username: string = '';
+  public userId: number = 0;
 
-  constructor() {}
+  constructor() { }
 
   clean(): void {
     window.sessionStorage.clear();

@@ -13,27 +13,25 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   login(username: string, password: string): Observable<any> {
     var user = {
-      username:username,
-      password:password,
+      username: username,
+      password: password,
     };
-    return this.http.post('http://localhost:5288/api/Account/Authenticate',user);
-  }
-  
-   getToken()
-  {
-        let user_token = this.getUser();
-          if( user_token && user_token.accessToken)
-          {
-            return user_token.accessToken;
-          }
-          else
-          return '';
+    return this.http.post('http://localhost:5288/api/Account/Authenticate', user);
   }
 
-   getUser(): any {
+  getToken() {
+    let user_token = this.getUser();
+    if (user_token && user_token.accessToken) {
+      return user_token.accessToken;
+    }
+    else
+      return '';
+  }
+
+  getUser(): any {
     const user = window.sessionStorage.getItem(USER_KEY);
     if (user) {
       return JSON.parse(user);
@@ -41,9 +39,9 @@ export class AuthService {
 
     return {};
   }
-  
+
 
   logout(): Observable<any> {
-    return this.http.post(AUTH_API + 'signout', { }, httpOptions);
+    return this.http.post(AUTH_API + 'signout', {}, httpOptions);
   }
 }

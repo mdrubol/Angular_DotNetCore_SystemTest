@@ -4,15 +4,15 @@ import { UserService } from '../_services/user.service';
 
 @Component({
   selector: 'app-board-user',
-  templateUrl: './board-user.component.html'   
+  templateUrl: './board-user.component.html'
 })
 export class BoardUserComponent implements OnInit {
-  userId:number=0;
+  userId: number = 0;
 
-  constructor(private storageService: StorageService) { 
-     this.userId=this.storageService.getUser().user.userId;
+  constructor(private storageService: StorageService) {
+    this.userId = this.storageService.getUser().user.userId;
   }
   ngOnInit(): void {
-    
+
   }
 }

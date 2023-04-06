@@ -6,7 +6,7 @@ import { AuthService } from './_services/auth.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html' 
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   private roles: string[] = [];
@@ -21,25 +21,24 @@ export class AppComponent {
     public storageService: StorageService,
     private authService: AuthService,
     //private eventBusService: EventBusService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    
+
     this.isLoggedIn = this.storageService.isLoggedIn();
 
     if (this.isLoggedIn) {
       const user_token = this.storageService.getUser();
-      if(user_token)
-      {
+      if (user_token) {
         this.roles = user_token.user.roles;
 
         this.showAdminBoard = this.roles.includes('Admin');
         this.showModeratorBoard = this.roles.includes('User');
         this.username = user_token.user.userName;
       }
-      
 
-     
+
+
     }
 
     /* this.eventBusSub = this.eventBusService.on('logout', () => {

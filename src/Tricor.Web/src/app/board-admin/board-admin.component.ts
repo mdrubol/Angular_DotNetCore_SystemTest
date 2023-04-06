@@ -3,16 +3,16 @@ import { UserService } from '../_services/user.service';
 
 @Component({
   selector: 'app-board-admin',
-  templateUrl: './board-admin.component.html' 
+  templateUrl: './board-admin.component.html'
 })
 export class BoardAdminComponent implements OnInit {
-  
 
-  constructor() { 
-    
+
+  constructor() {
+
   }
 
   ngOnInit(): void {
-    
+
   }
 }
