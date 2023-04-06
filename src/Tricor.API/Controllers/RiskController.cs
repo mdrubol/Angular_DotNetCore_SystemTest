@@ -15,19 +15,17 @@ namespace Tricor.API.Controllers
         private readonly IRiskRepository _riskRepository;
         public RiskController(IRiskRepository riskRepository)
         {
-            _riskRepository = riskRepository;          
+            _riskRepository = riskRepository;
         }
 
-       
         [HttpGet]
         [Authorize]
-        [Route("GetRisks/{id}")]
-        public async Task<IActionResult> GetRisks(int id)
+        [Route("GetRisks/{id}/{numberOfRows}")]
+        public async Task<IActionResult> GetRisks(int id, int? numberOfRows)
         {
             try
             {
-                 
-                var risks = await _riskRepository.GetRisks(id);
+                var risks = await _riskRepository.GetRisks(id, numberOfRows);
                 return Ok(risks);
             }
             catch (Exception ex)
@@ -37,7 +35,7 @@ namespace Tricor.API.Controllers
             }
         }
         // GET api/<RiskController>/5
-      
+
         [HttpGet]
         [Authorize]
         [Route("GetRiskById/{id}")]
@@ -48,7 +46,7 @@ namespace Tricor.API.Controllers
         }
 
         // POST api/<RiskController>
-       
+
         [HttpPost]
         [Authorize]
         [Route("CreateRisk")]
@@ -56,7 +54,7 @@ namespace Tricor.API.Controllers
         {
             risk.CreatedBy = base.CurrentUser.UserId;
             await _riskRepository.CreateRisk(risk);
-           return risk;
+            return risk;
         }
 
         // PUT api/<RiskController>/5
@@ -66,7 +64,7 @@ namespace Tricor.API.Controllers
         [Route("UpdateRisk")]
         public async Task<Risk> UpdateRisk(Risk risk)
         {
-            await _riskRepository.UpdateRisk(risk.Id,risk);
+            await _riskRepository.UpdateRisk(risk.Id, risk);
             return risk;
         }
 
@@ -79,7 +77,7 @@ namespace Tricor.API.Controllers
         {
             await _riskRepository.DeleteRisk(id);
 
-            return Ok("Success");    
+            return Ok("Success");
         }
     }
 }

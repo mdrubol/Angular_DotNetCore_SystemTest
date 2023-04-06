@@ -3,18 +3,10 @@ using Tricor.API.DTOs;
 using Tricor.API.Helpers;
 using Tricor.API.WebApi;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
- 
-
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
+
 
 #nullable disable
 
@@ -22,8 +14,8 @@ namespace Tricor.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-     
-     
+
+
     public class AccountController : BaseController
     {
         private readonly IUserRepository _userRepository;
@@ -39,7 +31,7 @@ namespace Tricor.API.Controllers
         [Route("Authenticate")]
         public async Task<IActionResult> Authenticate(UserLogin userLogin)
         {
-            var candidate = await _userRepository.AuthenticateUser(userLogin.UserName,userLogin.Password);
+            var candidate = await _userRepository.AuthenticateUser(userLogin.UserName, userLogin.Password);
 
             if (candidate != null)
             {
@@ -73,15 +65,14 @@ namespace Tricor.API.Controllers
                 {
                     AccessToken = new JwtSecurityTokenHandler().WriteToken(token),
                     ExpiresOnUtc = token.ValidTo,
-                    User = new CurrentUser {
+                    User = new CurrentUser
+                    {
                         UserId = loginUser.Id,
-                        Email = loginUser.Email, 
-                        UserName=loginUser.FirstName +" "+loginUser.LastName,
-                        Roles= userRoles.Select(r=> r.Name).ToList()
+                        Email = loginUser.Email,
+                        UserName = loginUser.FirstName + " " + loginUser.LastName,
+                        Roles = userRoles.Select(r => r.Name).ToList()
                     }
-                };
-
-                //base.CurrentUser= response.User;
+                };                
 
                 return Ok(response);
             }
@@ -98,7 +89,7 @@ namespace Tricor.API.Controllers
         {
             string msg = "Take rest everything is well.";
 
-            return Ok( await Task.FromResult(msg));
+            return Ok(await Task.FromResult(msg));
         }
     }
 }

@@ -1,11 +1,8 @@
 ﻿using Tricor.API.DTOs;
 using Tricor.API.Helpers;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
-using System.Security.Claims;
+ using System.Security.Claims;
 #nullable disable
 
 namespace Tricor.API.Controllers

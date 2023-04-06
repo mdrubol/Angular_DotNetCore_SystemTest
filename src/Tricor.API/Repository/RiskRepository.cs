@@ -6,36 +6,37 @@ using Tricor.API.Contracts;
 using Tricor.API.Entities;
 namespace Tricor.API.Repository
 {
-	public class RiskRepository : IRiskRepository
-	{
-		private readonly DapperContext _context;
+    public class RiskRepository : IRiskRepository
+    {
+        private readonly DapperContext _context;
 
-		public RiskRepository(DapperContext context)
-		{
-			_context = context;
-		}
-        public async Task<IEnumerable<Risk>> GetRisks(int userId)
+        public RiskRepository(DapperContext context)
         {
-            var query = "";               
+            _context = context;
+        }
+        public async Task<IEnumerable<Risk>> GetRisks(int userId, int? numberOfRows)
+        {
+            var query = "";
 
-            if(userId == 0)
+            if (userId == 0)
             {
-                query = "SELECT * FROM Risk";
+                query = $"SELECT TOP {numberOfRows} * FROM Risk ORDER BY Name ASC";
             }
-            else if(userId == -1) {
+            else if (userId == -1)
+            {
                 query = $"SELECT * FROM Risk WHERE CreatedBy = (SELECT TOP 1 UserId FRom UserRoles WHERE RoleId=1)";
 
             }
             else
             {
-                query = $"SELECT * FROM Risk WHERE CreatedBy = {userId}";
+                query = $"SELECT * FROM Risk WHERE CreatedBy = {userId} ORDER BY Name ASC";
             }
 
             using (var connection = _context.CreateConnection())
             {
                 var risk = await connection.QueryAsync<Risk>(query);
 
-                return risk.ToList(); 
+                return risk.ToList();
             }
         }
         public async Task<Risk> GetRiskById(int id)
@@ -44,7 +45,7 @@ namespace Tricor.API.Repository
             using (var connection = _context.CreateConnection())
             {
                 //connection.Open();               
-                var risk =  await connection.QueryFirstOrDefaultAsync<Risk>(query, new { id });
+                var risk = await connection.QueryFirstOrDefaultAsync<Risk>(query, new { id });
                 return risk;
             }
         }
@@ -55,11 +56,11 @@ namespace Tricor.API.Repository
             parameters.Add("Name", risk.Name, DbType.String);
             parameters.Add("Description ", risk.Description, DbType.String);
             parameters.Add("CreatedBy ", risk.CreatedBy, DbType.Int32);
-            
+
             using (var connection = _context.CreateConnection())
             {
                 ///connection.Open();
-                 await connection.ExecuteAsync(query, parameters);
+                await connection.ExecuteAsync(query, parameters);
             }
         }
         public async Task UpdateRisk(int id, Risk risk)
@@ -79,11 +80,11 @@ namespace Tricor.API.Repository
         {
             var query = "DELETE FROM Risk WHERE Id = @Id";
             using (var connection = _context.CreateConnection())
-            {                
+            {
                 await connection.ExecuteAsync(query, new { Id = id });
             }
         }
 
-        
+
     }
 }

@@ -50,9 +50,6 @@ builder.Services.AddAuthentication(auth =>
     };
 });
 
-
-
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -71,7 +68,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseCors();
-app.UseAuthentication();        
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
