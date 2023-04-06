@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
           }
         }
         if (this.roles.includes("Admin")) {
-          this.router.navigateByUrl('/admin');
+          this.router.navigateByUrl('/admin-landing-page');
         }
         else {
           this.router.navigateByUrl('/user');

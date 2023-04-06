@@ -7,9 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
-import { BoardUserComponent } from './board-user/board-user.component';
+import { AdminUserRiskListComponent } from './admin-user-risk-list/admin-user-risk-list.component';
 
 //import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { RiskListComponent } from './risk-list/risk-list.component';
@@ -24,9 +24,9 @@ import { SelectFromAdminComponent } from './select-from-admin/select-from-admin.
     AppComponent,
     LoginComponent,
     ProfileComponent,
-    BoardAdminComponent,
+    AdminLandingPageComponent,
     BoardModeratorComponent,
-    BoardUserComponent,
+    AdminUserRiskListComponent,
     RiskListComponent,
     RiskComponent,
     AdminRiskListComponent,
